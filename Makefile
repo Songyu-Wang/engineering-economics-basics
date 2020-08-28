@@ -27,5 +27,5 @@ coverage: test
 	rm -rf htmlcov
 	coverage html
 
-build: coverage docs-update
+build: install coverage docs-update
 	poetry build
