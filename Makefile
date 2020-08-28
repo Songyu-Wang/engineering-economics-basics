@@ -29,3 +29,6 @@ coverage: test
 
 build: install coverage docs-update
 	poetry build
+
+publish: build
+	poetry publish --username __token__ --password $(password)

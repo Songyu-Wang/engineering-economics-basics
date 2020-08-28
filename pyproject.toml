@@ -4,6 +4,19 @@ version = "0.1.0"
 description = "This package provides some of the basic functions of engineering economics"
 authors = ["Songyu-Wang <wangsongyuf@gmail.com>"]
 
+license = "MIT"
+readme = "README.md"
+homepage = "https://songyu-wang.github.io/engineering-economics-basics/"
+repository = "https://github.com/Songyu-Wang/engineering-economics-basics"
+keywords = ["engineering", "economics", "economy"]
+classifiers = [
+    "Operating System :: OS Independent",
+]
+include = [
+    "LICENSE",
+]
+
+
 [tool.poetry.dependencies]
 python = "^3.6"
 pdoc3 = "^0.9.1"
