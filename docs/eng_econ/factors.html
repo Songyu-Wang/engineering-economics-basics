@@ -26,49 +26,33 @@
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def single_payment_compound_amount_factor(i, n):
-    &#34;&#34;&#34;
-    Factor applies to F/P =&gt; to F (Future worth, value, or amount) given P (Present worth, value, or amount)
+<pre><code class="python">from eng_econ import generate_dcostring
 
-    :param i: Interest rate per interest period
-    :param n: Number of compounding periods
-    :return: Single payment compound amount factor
-    &#34;&#34;&#34;
+
+@generate_dcostring(&#34;F&#34;, &#34;P&#34;, &#34;Single payment compound amount&#34;)
+def single_payment_compound_amount_factor(i, n):
     return (1 + i) ** n
 
 
+@generate_dcostring(&#34;P&#34;, &#34;F&#34;, &#34;Single payment present worth&#34;)
 def single_payment_present_worth_factor(i, n):
-    &#34;&#34;&#34;
-    Factor applies to P/F =&gt; to P (Present worth, value, or amount) given F (Future worth, value, or amount)
-
-    :param i: Interest rate per interest period
-    :param n: Number of compounding periods
-    :return: Single payment present worth factor
-    &#34;&#34;&#34;
     return (1 + i) ** (-n)
 
 
+@generate_dcostring(&#34;A&#34;, &#34;F&#34;, &#34;Uniform series sinking fund&#34;)
 def uniform_series_sinking_fund_factor(i, n):
-    &#34;&#34;&#34;
-    Factor applies to A/F =&gt; to A (Uniform amount per interest period) given F (Future worth, value, or amount)
-
-    :param i: Interest rate per interest period
-    :param n: Number of compounding periods
-    :return: Uniform series sinking fund factor
-    &#34;&#34;&#34;
     return i / ((1 + i) ** n - 1)
 
 
+@generate_dcostring(&#34;A&#34;, &#34;P&#34;, &#34;Capital recovery&#34;)
 def capital_recovery_factor(i, n):
-    &#34;&#34;&#34;
-    Factor applies to A/P =&gt; to A (Uniform amount per interest period) given P (Present worth, value, or amount)
-
-    :param i: Interest rate per interest period
-    :param n: Number of compounding periods
-    :return: Capital recovery factor
-    &#34;&#34;&#34;
     temporary = (1 + i) ** n
-    return i * temporary / (temporary - 1)</code></pre>
+    return i * temporary / (temporary - 1)
+
+
+@generate_dcostring(&#34;F&#34;, &#34;A&#34;, &#34;Uniform series compound amount&#34;)
+def uniform_series_compound_amount_factor(i, n):
+    return ((1 + i) ** n - 1) / i</code></pre>
 </details>
 </section>
 <section>
@@ -83,21 +67,15 @@ def capital_recovery_factor(i, n):
 </code></dt>
 <dd>
 <div class="desc"><p>Factor applies to A/P =&gt; to A (Uniform amount per interest period) given P (Present worth, value, or amount)</p>
-<p>:param i: Interest rate per interest period
-:param n: Number of compounding periods
-:return: Capital recovery factor</p></div>
+<p>:param i: Interest rate per interest period</p>
+<p>:param n: Number of compounding periods</p>
+<p>:return: Capital recovery factor</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def capital_recovery_factor(i, n):
-    &#34;&#34;&#34;
-    Factor applies to A/P =&gt; to A (Uniform amount per interest period) given P (Present worth, value, or amount)
-
-    :param i: Interest rate per interest period
-    :param n: Number of compounding periods
-    :return: Capital recovery factor
-    &#34;&#34;&#34;
+<pre><code class="python">@generate_dcostring(&#34;A&#34;, &#34;P&#34;, &#34;Capital recovery&#34;)
+def capital_recovery_factor(i, n):
     temporary = (1 + i) ** n
     return i * temporary / (temporary - 1)</code></pre>
 </details>
@@ -107,21 +85,15 @@ def capital_recovery_factor(i, n):
 </code></dt>
 <dd>
 <div class="desc"><p>Factor applies to F/P =&gt; to F (Future worth, value, or amount) given P (Present worth, value, or amount)</p>
-<p>:param i: Interest rate per interest period
-:param n: Number of compounding periods
-:return: Single payment compound amount factor</p></div>
+<p>:param i: Interest rate per interest period</p>
+<p>:param n: Number of compounding periods</p>
+<p>:return: Single payment compound amount factor</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def single_payment_compound_amount_factor(i, n):
-    &#34;&#34;&#34;
-    Factor applies to F/P =&gt; to F (Future worth, value, or amount) given P (Present worth, value, or amount)
-
-    :param i: Interest rate per interest period
-    :param n: Number of compounding periods
-    :return: Single payment compound amount factor
-    &#34;&#34;&#34;
+<pre><code class="python">@generate_dcostring(&#34;F&#34;, &#34;P&#34;, &#34;Single payment compound amount&#34;)
+def single_payment_compound_amount_factor(i, n):
     return (1 + i) ** n</code></pre>
 </details>
 </dd>
@@ -130,22 +102,33 @@ def capital_recovery_factor(i, n):
 </code></dt>
 <dd>
 <div class="desc"><p>Factor applies to P/F =&gt; to P (Present worth, value, or amount) given F (Future worth, value, or amount)</p>
-<p>:param i: Interest rate per interest period
-:param n: Number of compounding periods
-:return: Single payment present worth factor</p></div>
+<p>:param i: Interest rate per interest period</p>
+<p>:param n: Number of compounding periods</p>
+<p>:return: Single payment present worth factor</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def single_payment_present_worth_factor(i, n):
-    &#34;&#34;&#34;
-    Factor applies to P/F =&gt; to P (Present worth, value, or amount) given F (Future worth, value, or amount)
-
-    :param i: Interest rate per interest period
-    :param n: Number of compounding periods
-    :return: Single payment present worth factor
-    &#34;&#34;&#34;
+<pre><code class="python">@generate_dcostring(&#34;P&#34;, &#34;F&#34;, &#34;Single payment present worth&#34;)
+def single_payment_present_worth_factor(i, n):
     return (1 + i) ** (-n)</code></pre>
+</details>
+</dd>
+<dt id="eng_econ.factors.uniform_series_compound_amount_factor"><code class="name flex">
+<span>def <span class="ident">uniform_series_compound_amount_factor</span></span>(<span>i, n)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Factor applies to F/A =&gt; to F (Future worth, value, or amount) given A (Uniform amount per interest period)</p>
+<p>:param i: Interest rate per interest period</p>
+<p>:param n: Number of compounding periods</p>
+<p>:return: Uniform series compound amount factor</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@generate_dcostring(&#34;F&#34;, &#34;A&#34;, &#34;Uniform series compound amount&#34;)
+def uniform_series_compound_amount_factor(i, n):
+    return ((1 + i) ** n - 1) / i</code></pre>
 </details>
 </dd>
 <dt id="eng_econ.factors.uniform_series_sinking_fund_factor"><code class="name flex">
@@ -153,21 +136,15 @@ def capital_recovery_factor(i, n):
 </code></dt>
 <dd>
 <div class="desc"><p>Factor applies to A/F =&gt; to A (Uniform amount per interest period) given F (Future worth, value, or amount)</p>
-<p>:param i: Interest rate per interest period
-:param n: Number of compounding periods
-:return: Uniform series sinking fund factor</p></div>
+<p>:param i: Interest rate per interest period</p>
+<p>:param n: Number of compounding periods</p>
+<p>:return: Uniform series sinking fund factor</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def uniform_series_sinking_fund_factor(i, n):
-    &#34;&#34;&#34;
-    Factor applies to A/F =&gt; to A (Uniform amount per interest period) given F (Future worth, value, or amount)
-
-    :param i: Interest rate per interest period
-    :param n: Number of compounding periods
-    :return: Uniform series sinking fund factor
-    &#34;&#34;&#34;
+<pre><code class="python">@generate_dcostring(&#34;A&#34;, &#34;F&#34;, &#34;Uniform series sinking fund&#34;)
+def uniform_series_sinking_fund_factor(i, n):
     return i / ((1 + i) ** n - 1)</code></pre>
 </details>
 </dd>
@@ -192,6 +169,7 @@ def capital_recovery_factor(i, n):
 <li><code><a title="eng_econ.factors.capital_recovery_factor" href="#eng_econ.factors.capital_recovery_factor">capital_recovery_factor</a></code></li>
 <li><code><a title="eng_econ.factors.single_payment_compound_amount_factor" href="#eng_econ.factors.single_payment_compound_amount_factor">single_payment_compound_amount_factor</a></code></li>
 <li><code><a title="eng_econ.factors.single_payment_present_worth_factor" href="#eng_econ.factors.single_payment_present_worth_factor">single_payment_present_worth_factor</a></code></li>
+<li><code><a title="eng_econ.factors.uniform_series_compound_amount_factor" href="#eng_econ.factors.uniform_series_compound_amount_factor">uniform_series_compound_amount_factor</a></code></li>
 <li><code><a title="eng_econ.factors.uniform_series_sinking_fund_factor" href="#eng_econ.factors.uniform_series_sinking_fund_factor">uniform_series_sinking_fund_factor</a></code></li>
 </ul>
 </li>

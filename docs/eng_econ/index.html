@@ -26,7 +26,30 @@
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">__version__ = &#34;0.1.0&#34;</code></pre>
+<pre><code class="python">__version__ = &#34;0.1.0&#34;
+
+
+def generate_dcostring(first_notation, second_notation, name):
+    notations = {
+        &#34;F&#34;: &#34;Future worth, value, or amount&#34;,
+        &#34;P&#34;: &#34;Present worth, value, or amount&#34;,
+        &#34;A&#34;: &#34;Uniform amount per interest period&#34;,
+    }
+    docstring = f&#34;&#34;&#34;
+       Factor applies to {first_notation}/{second_notation} =&gt; to {first_notation} ({notations[first_notation]}) given {second_notation} ({notations[second_notation]})
+
+       :param i: Interest rate per interest period
+
+       :param n: Number of compounding periods
+
+       :return: {name} factor
+       &#34;&#34;&#34;
+
+    def dec(obj):
+        obj.__doc__ = docstring
+        return obj
+
+    return dec</code></pre>
 </details>
 </section>
 <section>
@@ -41,6 +64,41 @@
 <section>
 </section>
 <section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="eng_econ.generate_dcostring"><code class="name flex">
+<span>def <span class="ident">generate_dcostring</span></span>(<span>first_notation, second_notation, name)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def generate_dcostring(first_notation, second_notation, name):
+    notations = {
+        &#34;F&#34;: &#34;Future worth, value, or amount&#34;,
+        &#34;P&#34;: &#34;Present worth, value, or amount&#34;,
+        &#34;A&#34;: &#34;Uniform amount per interest period&#34;,
+    }
+    docstring = f&#34;&#34;&#34;
+       Factor applies to {first_notation}/{second_notation} =&gt; to {first_notation} ({notations[first_notation]}) given {second_notation} ({notations[second_notation]})
+
+       :param i: Interest rate per interest period
+
+       :param n: Number of compounding periods
+
+       :return: {name} factor
+       &#34;&#34;&#34;
+
+    def dec(obj):
+        obj.__doc__ = docstring
+        return obj
+
+    return dec</code></pre>
+</details>
+</dd>
+</dl>
 </section>
 <section>
 </section>
@@ -54,6 +112,11 @@
 <li><h3><a href="#header-submodules">Sub-modules</a></h3>
 <ul>
 <li><code><a title="eng_econ.factors" href="factors.html">eng_econ.factors</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="eng_econ.generate_dcostring" href="#eng_econ.generate_dcostring">generate_dcostring</a></code></li>
 </ul>
 </li>
 </ul>
