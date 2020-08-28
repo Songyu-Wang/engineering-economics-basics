@@ -11,7 +11,7 @@ repository = "https://github.com/Songyu-Wang/engineering-economics-basics"
 keywords = ["engineering", "economics", "economy", "investments"]
 classifiers = [
     "Operating System :: OS Independent",
-    "Office/Business :: Financial"
+    "Topic :: Office/Business :: Financial"
 ]
 include = [
     "LICENSE",
