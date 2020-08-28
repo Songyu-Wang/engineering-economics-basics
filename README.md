@@ -18,7 +18,7 @@ pip install eng_econ
 ```
 # Using uniform_gradient_present_worth_factor as an example
 from eng_econ.factors import uniform_gradient_present_worth_factor
-uniform_gradient_present_worth_factor(0.01,20)
+uniform_gradient_present_worth_factor(0.01, 20)
 ```
 
 ## Documents
