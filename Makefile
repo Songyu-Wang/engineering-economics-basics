@@ -19,8 +19,9 @@ lint: black isort
 test: lint
 	pytest
 
-doc-update:
-
+docs-update:
+	rm -rf docs
+	pdoc --html -o docs eng_econ
 
 build: test doc-update
 	poetry build
