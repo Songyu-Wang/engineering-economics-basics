@@ -5,6 +5,8 @@
 
 This package provides some of the basic functions of engineering economics
 
+You can find it at: https://pypi.org/project/eng-econ/
+
 ## Documents
 
 See https://songyu-wang.github.io/engineering-economics-basics/docs/eng_econ/index.html
