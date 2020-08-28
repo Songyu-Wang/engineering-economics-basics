@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "eng_econ"
-version = "0.1.0"
+version = "0.1.1"
 description = "This package provides some of the basic functions of engineering economics"
 authors = ["Songyu-Wang <wangsongyuf@gmail.com>"]
 
