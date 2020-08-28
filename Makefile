@@ -18,3 +18,10 @@ lint: black isort
 
 test: lint
 	pytest
+
+doc-update:
+	rm -f DOCS.md
+	pdoc --pdf eng_econ > DOCS.md
+
+build: test doc-update
+	poetry build
