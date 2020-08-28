@@ -5,7 +5,7 @@
 
 This package provides some of the basic functions of engineering economics
 
-You can find it at: https://pypi.org/project/eng-econ/
+You can find it at: [https://pypi.org/project/eng-econ/](https://pypi.org/project/eng-econ/)
 
 ## Install
 
@@ -23,11 +23,11 @@ uniform_gradient_present_worth_factor(0.01, 20)
 
 ## Documents
 
-See https://songyu-wang.github.io/engineering-economics-basics/docs/eng_econ/index.html
+See [https://songyu-wang.github.io/engineering-economics-basics/docs/eng_econ/index.html](https://songyu-wang.github.io/engineering-economics-basics/docs/eng_econ/index.html)
 
 ## Test Coverage
 
-see  https://songyu-wang.github.io/engineering-economics-basics/htmlcov/index.html
+see [https://songyu-wang.github.io/engineering-economics-basics/htmlcov/index.html](https://songyu-wang.github.io/engineering-economics-basics/htmlcov/index.html)
 
 ### Reference
 
