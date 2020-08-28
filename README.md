@@ -7,6 +7,20 @@ This package provides some of the basic functions of engineering economics
 
 You can find it at: https://pypi.org/project/eng-econ/
 
+## Install
+
+```
+pip install eng_econ
+```
+
+## Usage
+
+```
+# Using uniform_gradient_present_worth_factor as example
+from eng_econ.factors import uniform_gradient_present_worth_factor
+uniform_gradient_present_worth_factor(0.01,20)
+```
+
 ## Documents
 
 See https://songyu-wang.github.io/engineering-economics-basics/docs/eng_econ/index.html
