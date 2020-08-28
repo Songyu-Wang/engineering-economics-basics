@@ -21,7 +21,7 @@ test: lint
 
 docs-update:
 	rm -rf docs
-	pdoc -o docs eng_econ
+	pdoc --html -o docs eng_econ
 
 build: test docs-update
 	poetry build
