@@ -20,8 +20,8 @@ test: lint
 	pytest
 
 doc-update:
-	rm -f DOCS.md
-	pdoc --pdf eng_econ > DOCS.md
+	rm -rf html
+	pdoc --html eng_econ
 
 build: test doc-update
 	poetry build
