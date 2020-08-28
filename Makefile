@@ -23,5 +23,5 @@ docs-update:
 	rm -rf docs
 	pdoc -o docs eng_econ
 
-build: test doc-update
+build: test docs-update
 	poetry build
