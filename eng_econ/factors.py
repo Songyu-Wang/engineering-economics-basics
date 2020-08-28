@@ -25,3 +25,25 @@ def capital_recovery_factor(i, n):
 @generate_dcostring("F", "A", "Uniform series compound amount")
 def uniform_series_compound_amount_factor(i, n):
     return ((1 + i) ** n - 1) / i
+
+
+@generate_dcostring("P", "A", "Uniform series present worth")
+def uniform_series_present_wortht_factor(i, n):
+    temporary = (1 + i) ** n
+    return (temporary - 1) / (i * temporary)
+
+
+@generate_dcostring("P", "G", "uniform gradient present worth")
+def uniform_gradient_present_worth_factor(i, n):
+    temporary = (1 + i) ** n
+    return (temporary - 1) / (i ** 2 * temporary) - (n / (i * temporary))
+
+
+@generate_dcostring("F", "G", "uniform gradient future worth")
+def uniform_gradient_future_worth_factor(i, n):
+    return ((1 + i) ** n - 1) / (i ** 2) - (n / i)
+
+
+@generate_dcostring("A", "G", "Uniform gradient uniform series")
+def uniform_gradient_uniform_series_factor(i, n):
+    return 1 / i - (n / ((1 + i) ** n - 1))

@@ -17,11 +17,15 @@ lint: black isort
 	autopep8 --in-place --aggressive --aggressive -r .
 
 test: lint
-	pytest
+	coverage run --source=eng_econ -m pytest
 
 docs-update:
 	rm -rf docs
 	pdoc --html -o docs eng_econ
 
-build: test docs-update
+coverage: test
+	rm -rf htmlcov
+	coverage html
+
+build: coverage docs-update
 	poetry build

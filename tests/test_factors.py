@@ -38,3 +38,31 @@ def test_capital_recovery_factor(i, n, expected):
 )
 def test_uniform_series_compound_amount_factor(i, n, expected):
     assert round(f.uniform_series_compound_amount_factor(i, n), 4) == expected
+
+
+@pytest.mark.parametrize(
+    test_input, [(0.005, 1, 0.9950), (0.01, 10, 9.4713), (0.08, 5, 3.9927)]
+)
+def test_uniform_series_present_worth_factor(i, n, expected):
+    assert round(f.uniform_series_present_wortht_factor(i, n), 4) == expected
+
+
+@pytest.mark.parametrize(
+    test_input, [(0.005, 1, 0.0000), (0.01, 10, 41.8435), (0.08, 5, 7.3724)]
+)
+def test_uniform_gradient_present_worth_factor(i, n, expected):
+    assert round(f.uniform_gradient_present_worth_factor(i, n), 4) == expected
+
+
+@pytest.mark.parametrize(
+    test_input, [(0.005, 1, 0.0000), (0.01, 10, 46.2213), (0.08, 5, 10.8325)]
+)
+def test_uniform_gradient_future_worth_factor(i, n, expected):
+    assert round(f.uniform_gradient_future_worth_factor(i, n), 4) == expected
+
+
+@pytest.mark.parametrize(
+    test_input, [(0.005, 1, 0.0000), (0.01, 10, 4.4179), (0.08, 5, 1.8465)]
+)
+def test_uniform_gradient_uniform_series_factor(i, n, expected):
+    assert round(f.uniform_gradient_uniform_series_factor(i, n), 4) == expected

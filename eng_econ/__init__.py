@@ -6,6 +6,7 @@ def generate_dcostring(first_notation, second_notation, name):
         "F": "Future worth, value, or amount",
         "P": "Present worth, value, or amount",
         "A": "Uniform amount per interest period",
+        "G": "Uniform gradient amount per interest period",
     }
     docstring = f"""
        Factor applies to {first_notation}/{second_notation} => to {first_notation} ({notations[first_notation]}) given {second_notation} ({notations[second_notation]})
