@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "eng_econ"
-version = "0.1.2"
+version = "0.1.3"
 description = "This package provides some of the basic functions of engineering economics"
 authors = ["Songyu-Wang <wangsongyuf@gmail.com>"]
 
@@ -8,9 +8,10 @@ license = "MIT"
 readme = "README.md"
 homepage = "https://songyu-wang.github.io/engineering-economics-basics/"
 repository = "https://github.com/Songyu-Wang/engineering-economics-basics"
-keywords = ["engineering", "economics", "economy"]
+keywords = ["engineering", "economics", "economy", "investments"]
 classifiers = [
     "Operating System :: OS Independent",
+    "Office/Business :: Financial"
 ]
 include = [
     "LICENSE",
